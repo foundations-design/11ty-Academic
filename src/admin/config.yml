@@ -11,6 +11,44 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
+  - name: "cv" # Used in routes, e.g., /admin/collections/resume
+    label: "CV" # Used in the UI
+    # folder: "_resume" # The path to the folder where the documents are stored
+    # create: true # Allow users to create new documents in this collection
+    files: # The fields for each document, usually in front matter
+      - label: "Education"
+        name: "Education"
+        widget: "list"
+        file: "src/_data/cv.yaml"
+        fields:
+          - {label: "Degree", name: "Degree", widget: "string"}
+          - {label: "Institution", name: "Institution", widget: "string"}
+          - {label: "Location", name: "Location", widget: "string"}
+          - {label: "Duration", name: "Duration", widget: "string"}
+          - {label: "GPA", name: "GPA", widget: "string", required: false}
+          - {label: "Details", name: "Details", widget: "list", required: false}
+      # - label: "Work Experience"
+      #   name: "Work_Experience"
+      #   widget: "list"
+      #   fields:
+      #     - {label: "Position", name: "Position", widget: "string"}
+      #     - {label: "Institution", name: "Institution", widget: "string"}
+      #     - {label: "Location", name: "Location", widget: "string"}
+      #     - {label: "Duration", name: "Duration", widget: "string"}
+      #     - {label: "Responsibilities", name: "Responsibilities", widget: "list"}
+      # - label: "Leadership Experience"
+      #   name: "Leadership_Experience"
+      #   widget: "list"
+      #   fields:
+      #     - {label: "Position", name: "Position", widget: "string"}
+      #     - {label: "Institution", name: "Institution", widget: "string"}
+      #     - {label: "Location", name: "Location", widget: "string", required: false}
+      #     - {label: "Duration", name: "Duration", widget: "string"}
+      #     - {label: "Responsibilities", name: "Responsibilities", widget: "list"}
+      # - label: "Skills"
+      #   name: "Skills"
+      #   widget: "list"
+      #   field: {label: "Skill", name: "Skill", widget: "string"}
   - label: "Blog"
     name: "blog"
     folder: "src/posts"
